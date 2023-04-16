@@ -44,7 +44,7 @@ insert into outcomes (ship, battle, result) values('Duke of York','North Cape','
 insert into outcomes (ship, battle, result) values('Fuso','Surigao Strait','sunk');
 insert into outcomes (ship, battle, result) values('Hood','North Atlantic','sunk');
 insert into outcomes (ship, battle, result) values('King George V','North Atlantic','OK');
-insert into outcomes (ship, battle, result) values('Kirishima','Guadalcanal','sunk');
+insert into outcomes (ship, battle, result) values('Kirishima','North Atlantic','sunk');
 insert into outcomes (ship, battle, result) values('Prince of Wales','North Atlantic','damaged');
 insert into outcomes (ship, battle, result) values('Rodney','North Atlantic','OK');
 insert into outcomes (ship, battle, result) values('Schamhorst','North Cape','sunk');

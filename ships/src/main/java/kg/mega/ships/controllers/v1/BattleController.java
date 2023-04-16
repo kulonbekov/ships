@@ -45,6 +45,16 @@ public class BattleController {
         return ResponseEntity.ok(battleService.findAll());
     }
 
+    @GetMapping("/find/by/battle/result")
+    @ApiOperation("Поиск классы кораблей, в которых хотя бы один корабль был потоплен в сражении")
+    ResponseEntity<?> findByBattleResult(@RequestParam String name) {
+        try {
+            return new ResponseEntity<>(battleService.findByBattleResult(name), HttpStatus.FOUND);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
 
 
 

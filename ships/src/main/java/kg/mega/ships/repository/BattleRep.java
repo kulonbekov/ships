@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BattleRep extends JpaRepository<Battle, String> {
+
+
 }

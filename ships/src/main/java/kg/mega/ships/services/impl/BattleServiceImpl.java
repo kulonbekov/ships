@@ -1,9 +1,12 @@
 package kg.mega.ships.services.impl;
 
 import kg.mega.ships.mappers.BattleMapper;
+import kg.mega.ships.mappers.ClassMapper;
 import kg.mega.ships.models.dtos.BattleDto;
 import kg.mega.ships.models.entities.Battle;
+import kg.mega.ships.models.responseDto.BattleResponseDto;
 import kg.mega.ships.repository.BattleRep;
+import kg.mega.ships.repository.ClassRep;
 import kg.mega.ships.services.BattleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,6 +19,16 @@ public class BattleServiceImpl implements BattleService {
 
     private final BattleRep battleRep;
     private BattleMapper battleMapper = BattleMapper.INSTANCE;
+    private final ClassRep classRep;
+    private ClassMapper classMapper = ClassMapper.INSTANCE;
+
+    @Override
+    public BattleResponseDto findByBattleResult(String name) {
+        List<String> classList = classRep.findByBattleResult(name);
+        BattleResponseDto battle_result = new BattleResponseDto();
+        battle_result.setClass_names(classList);
+        return battle_result;
+    }
 
     @Override
     public BattleDto save(BattleDto battleDto) {
@@ -45,4 +58,6 @@ public class BattleServiceImpl implements BattleService {
     public BattleDto delete(String name) {
         return null;
     }
+
+
 }
