@@ -1,9 +1,7 @@
 package kg.mega.ships.models.entities;
 
-import com.sun.istack.NotNull;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.springframework.lang.Nullable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,23 +15,23 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "classes")
-public class ShipClass {
+public class Class {
 
     @Id
-    @Column(length = 50)
-    @NotNull
+    @Column(length = 50, name = "class_name")
     String className;
-    @NotNull
-    @Column(length = 2)
+
+    @Column(length = 2, name="type")
     String type;
-    @NotNull
-    @Column(length = 20)
+
+    @Column(length = 20, name = "country")
     String country;
-    @Nullable
+
+    @Column(name = "num_guns")
     int numGuns;
-    @Nullable
+    @Column(name = "bore")
     double bore;
-    @Nullable
+    @Column(name = "displacement")
     int displacement;
 
 

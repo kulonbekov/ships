@@ -1,9 +1,7 @@
 package kg.mega.ships.models.entities;
 
-import com.sun.istack.NotNull;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 
@@ -17,14 +15,13 @@ import javax.persistence.*;
 public class Ship {
 
     @Id
-    @Column(length = 50)
+    @Column(length = 50, name = "name")
     String name;
 
-    @NotNull
     @ManyToOne
     @JoinColumn(name = "class_name")
-    ShipClass shipClass;
-    @Nullable
+    Class className;
+    @Column(name = "launched")
     int launched;
 
 
