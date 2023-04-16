@@ -61,7 +61,7 @@ insert into roles (id, name) VALUES (2, 'ROLE_USER');
 
 /*Пользователь 'mirbek' с ролем (ROLE_ADMIN)*/
 insert into users(id,status,updated, password, username)
-VALUES (1,  'ACTIVE', '2023-03-29 02:28:38.593', '$2a$04$2dnfYu7/IZg00PN8tKmhnusiNwKCacm.gEAP/2RxLPom2LldkcX8e', 'mirbek');
+VALUES (1,  'ACTIVE', '2023-03-29 02:28:38.593', '$2a$04$MPFmkRWcDZqV.Tu8OEN13eeB/TriJo5SgvBckwZFYhfh1op45RVxS', 'mirbek');
 
 /*В промежуточной таблице добавляются роли к пользователям*/
 insert into users_roles(user_id,role_id)VALUES (1,1);
