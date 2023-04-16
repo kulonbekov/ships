@@ -25,7 +25,7 @@ public class BattleServiceImpl implements BattleService {
     }
 
     @Override
-    public BattleDto findById(String name) {
+    public BattleDto findByName(String name) {
 
         return battleMapper.toDto(battleRep.findById(name).orElseThrow(()
                 -> new RuntimeException("Battle not found")));

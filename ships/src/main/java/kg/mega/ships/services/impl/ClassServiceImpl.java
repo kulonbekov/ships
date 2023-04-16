@@ -26,7 +26,7 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
-    public ClassDto findById(String name) {
+    public ClassDto findByName(String name) {
         return classMapper.toDto(classRep.findById(name).orElseThrow(()
                 -> new RuntimeException("Class not found")));
     }

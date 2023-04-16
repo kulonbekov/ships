@@ -24,7 +24,7 @@ public class ShipServiceImpl implements ShipService {
     }
 
     @Override
-    public ShipDto findById(String name) {
+    public ShipDto findByName(String name) {
         return shipMapper.toDto(shipRep.findById(name).orElseThrow(()
                 -> new RuntimeException("Class not found")));
     }

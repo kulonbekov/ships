@@ -25,7 +25,7 @@ public class OutcomeServiceImpl implements OutcomeService {
     }
 
     @Override
-    public OutcomeDto findById(String name) {
+    public OutcomeDto findByName(String name) {
         return outcomeMapper.toDto(outcomeRep.findById(name).orElseThrow(()
                 -> new RuntimeException("Outcome not found")));
     }
