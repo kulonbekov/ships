@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(tags = "1. Классы кораблей")
+@Api(tags = "3. Классы кораблей")
 @RestController
 @RequestMapping(value = "/api/v1/class")
 @RequiredArgsConstructor

@@ -26,8 +26,11 @@ public class OutcomeServiceImpl implements OutcomeService {
 
     @Override
     public OutcomeDto findByName(String name) {
-        return outcomeMapper.toDto(outcomeRep.findById(name).orElseThrow(()
-                -> new RuntimeException("Outcome not found")));
+        return null;
+    }
+    @Override
+    public OutcomeDto findByShipName(String name) {
+        return outcomeMapper.toDto(outcomeRep.findByShipName(name));
     }
 
     @Override
@@ -44,4 +47,6 @@ public class OutcomeServiceImpl implements OutcomeService {
     public OutcomeDto delete(String name) {
         return null;
     }
+
+
 }

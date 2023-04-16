@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(tags = "1. Результаты")
+@Api(tags = "4. Результаты")
 @RestController
-@RequestMapping(value = "/api/v1/battle")
+@RequestMapping(value = "/api/v1/outcome")
 @RequiredArgsConstructor
 public class OutcomeController {
 
@@ -33,9 +33,9 @@ public class OutcomeController {
 
     @GetMapping("/find/by/name")
     @ApiOperation("Поиск результата по названию")
-    ResponseEntity<?> findByName(@RequestParam String name) {
+    ResponseEntity<?> findByShipName(@RequestParam String name) {
         try {
-            return new ResponseEntity<>(outcomeService.findByName(name), HttpStatus.FOUND);
+            return new ResponseEntity<>(outcomeService.findByShipName(name), HttpStatus.FOUND);
         } catch (Exception e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
