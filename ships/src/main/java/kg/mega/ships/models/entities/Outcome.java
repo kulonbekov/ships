@@ -20,7 +20,7 @@ public class Outcome {
     String ship;
     @Id
     @ManyToOne
-    @JoinColumn(name="battle")
+    @JoinColumn(name = "battle")
     Battle battle;
     @Column(length = 10, name = "result")
     String result;

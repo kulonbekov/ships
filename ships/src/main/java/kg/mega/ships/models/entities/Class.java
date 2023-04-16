@@ -21,7 +21,7 @@ public class Class {
     @Column(length = 50, name = "class_name")
     String className;
 
-    @Column(length = 2, name="type")
+    @Column(length = 2, name = "type")
     String type;
 
     @Column(length = 20, name = "country")
@@ -33,7 +33,6 @@ public class Class {
     double bore;
     @Column(name = "displacement")
     int displacement;
-
 
 
 }

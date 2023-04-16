@@ -25,5 +25,4 @@ public class Ship {
     int launched;
 
 
-
 }
