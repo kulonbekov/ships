@@ -7,6 +7,7 @@ import kg.mega.ships.repository.ClassRep;
 import kg.mega.ships.services.ClassService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -42,7 +43,8 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
-    public ClassDto delete(String name) {
-        return null;
+    @Transactional
+    public void delete(String name) {
+        classRep.deleteByClassName(name);
     }
 }

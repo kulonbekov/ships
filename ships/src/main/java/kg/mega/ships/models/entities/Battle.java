@@ -4,11 +4,9 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -24,4 +22,6 @@ public class Battle {
     String name;
     @JsonFormat(pattern = "yyyy.MM.dd")
     Date date;
+    @OneToMany(mappedBy = "battle", cascade = CascadeType.REMOVE)
+    List<Outcome> outcomes;
 }

@@ -24,4 +24,6 @@ public interface ClassRep extends JpaRepository<Class, String> {
             "INNER JOIN outcomes o ON c.class_name = o.ship\n" +
             "where o.result = 'sunk' and o.battle = :name", nativeQuery = true)
     List<String> findByBattleResult(String name);
+
+    void deleteByClassName(String name);
 }

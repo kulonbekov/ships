@@ -10,6 +10,7 @@ import kg.mega.ships.repository.ClassRep;
 import kg.mega.ships.services.BattleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -55,8 +56,9 @@ public class BattleServiceImpl implements BattleService {
     }
 
     @Override
-    public BattleDto delete(String name) {
-        return null;
+    @Transactional
+    public void delete(String name) {
+        battleRep.deleteByName(name);
     }
 
 

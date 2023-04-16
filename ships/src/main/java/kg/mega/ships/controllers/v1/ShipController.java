@@ -47,7 +47,16 @@ public class ShipController {
         return ResponseEntity.ok(shipService.findAll());
     }
 
-
+    @DeleteMapping("/delete/by/name")
+    @ApiOperation("Удаления записи")
+    ResponseEntity<?> delete(@RequestParam String name){
+        try {
+            shipService.delete(name);
+            return ResponseEntity.ok("database entry deleted");
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
 
 
 }

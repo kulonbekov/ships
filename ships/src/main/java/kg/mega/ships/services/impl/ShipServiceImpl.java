@@ -7,6 +7,7 @@ import kg.mega.ships.repository.ShipRep;
 import kg.mega.ships.services.ShipService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -40,7 +41,8 @@ public class ShipServiceImpl implements ShipService {
     }
 
     @Override
-    public ShipDto delete(String name) {
-        return null;
+    @Transactional
+    public void delete(String name) {
+        shipRep.deleteByName(name);
     }
 }

@@ -10,4 +10,6 @@ public interface OutcomeRep extends JpaRepository<Outcome, String> {
 
     @Query(value = "select * from outcomes where ship = :name", nativeQuery = true)
     Outcome findByShipName(String name);
+
+    void deleteByShip(String name);
 }

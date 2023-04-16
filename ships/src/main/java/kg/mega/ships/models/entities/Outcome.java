@@ -2,6 +2,7 @@ package kg.mega.ships.models.entities;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 

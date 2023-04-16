@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ShipRep extends JpaRepository<Ship, String> {
+
+    void deleteByName(String name);
 }

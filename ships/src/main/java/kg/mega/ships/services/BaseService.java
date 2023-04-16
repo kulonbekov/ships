@@ -11,5 +11,5 @@ public interface BaseService<Dto> {
 
     Dto update(Dto dto);
 
-    Dto delete(String name);
+    void delete(String name);
 }

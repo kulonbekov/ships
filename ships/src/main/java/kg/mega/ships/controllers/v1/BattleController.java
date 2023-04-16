@@ -55,6 +55,17 @@ public class BattleController {
         }
     }
 
+    @DeleteMapping("/delete/by/name")
+    @ApiOperation("Удаления записи")
+    ResponseEntity<?> delete(@RequestParam String name){
+        try {
+            battleService.delete(name);
+            return ResponseEntity.ok("database entry deleted");
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
 
 
 

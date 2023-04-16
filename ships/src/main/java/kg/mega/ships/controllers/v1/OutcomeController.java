@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import kg.mega.ships.models.dtos.BattleDto;
 import kg.mega.ships.models.dtos.OutcomeDto;
+import kg.mega.ships.repository.OutcomeRep;
 import kg.mega.ships.services.BattleService;
 import kg.mega.ships.services.OutcomeService;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,7 @@ import java.util.List;
 public class OutcomeController {
 
     private final OutcomeService outcomeService;
+    private final OutcomeRep outcomeRep;
 
     @PostMapping("/save")
     @ApiOperation("Сохранение")
@@ -45,6 +47,17 @@ public class OutcomeController {
     @ApiOperation("Вывод всех результатов")
     ResponseEntity<List<OutcomeDto>> findAll() {
         return ResponseEntity.ok(outcomeService.findAll());
+    }
+
+    @DeleteMapping("/delete/by/name")
+    @ApiOperation("Удаления записи")
+    ResponseEntity<?> delete(@RequestParam String name){
+        try {
+            outcomeService.delete(name);
+            return ResponseEntity.ok("database entry deleted");
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
     }
 
 

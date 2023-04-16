@@ -3,10 +3,8 @@ package kg.mega.ships.models.entities;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -33,6 +31,9 @@ public class Class {
     double bore;
     @Column(name = "displacement")
     int displacement;
+
+    @OneToMany(mappedBy = "className", cascade = CascadeType.REMOVE)
+    List<Ship> ships;
 
 
 }

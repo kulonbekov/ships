@@ -7,6 +7,7 @@ import kg.mega.ships.repository.OutcomeRep;
 import kg.mega.ships.services.OutcomeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -44,8 +45,9 @@ public class OutcomeServiceImpl implements OutcomeService {
     }
 
     @Override
-    public OutcomeDto delete(String name) {
-        return null;
+    @Transactional
+    public void delete(String name) {
+        outcomeRep.deleteByShip(name);
     }
 
 
