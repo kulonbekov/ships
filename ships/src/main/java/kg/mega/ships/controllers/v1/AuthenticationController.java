@@ -46,7 +46,7 @@ public class AuthenticationController {
             return ResponseEntity.ok(responseDto);
         } catch (AuthenticationException e) {
             return new ResponseEntity<>("Invalid username or password", HttpStatus.NOT_FOUND);
-        } catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
     }

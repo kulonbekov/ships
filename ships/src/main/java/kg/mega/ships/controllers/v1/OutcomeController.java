@@ -2,10 +2,8 @@ package kg.mega.ships.controllers.v1;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import kg.mega.ships.models.dtos.BattleDto;
 import kg.mega.ships.models.dtos.OutcomeDto;
 import kg.mega.ships.repository.OutcomeRep;
-import kg.mega.ships.services.BattleService;
 import kg.mega.ships.services.OutcomeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,7 +23,7 @@ public class OutcomeController {
 
     @PostMapping("/save")
     @ApiOperation("Сохранение")
-    ResponseEntity<?> save (@RequestBody OutcomeDto outcomeDto){
+    ResponseEntity<?> save(@RequestBody OutcomeDto outcomeDto) {
         try {
             return new ResponseEntity<>(outcomeService.save(outcomeDto), HttpStatus.CREATED);
         } catch (Exception e) {
@@ -51,7 +49,7 @@ public class OutcomeController {
 
     @DeleteMapping("/delete/by/name")
     @ApiOperation("Удаления записи")
-    ResponseEntity<?> delete(@RequestParam String name){
+    ResponseEntity<?> delete(@RequestParam String name) {
         try {
             outcomeService.delete(name);
             return ResponseEntity.ok("database entry deleted");
@@ -59,8 +57,6 @@ public class OutcomeController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
-
-
 
 
 }

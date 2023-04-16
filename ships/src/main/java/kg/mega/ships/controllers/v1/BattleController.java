@@ -21,7 +21,7 @@ public class BattleController {
 
     @PostMapping("/save")
     @ApiOperation("Сохранение")
-    ResponseEntity<?> save (@RequestBody BattleDto battleDto){
+    ResponseEntity<?> save(@RequestBody BattleDto battleDto) {
         try {
             return new ResponseEntity<>(battleService.save(battleDto), HttpStatus.CREATED);
         } catch (Exception e) {
@@ -57,7 +57,7 @@ public class BattleController {
 
     @DeleteMapping("/delete/by/name")
     @ApiOperation("Удаления записи")
-    ResponseEntity<?> delete(@RequestParam String name){
+    ResponseEntity<?> delete(@RequestParam String name) {
         try {
             battleService.delete(name);
             return ResponseEntity.ok("database entry deleted");
@@ -65,8 +65,6 @@ public class BattleController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
-
-
 
 
 }
