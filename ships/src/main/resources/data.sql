@@ -1,3 +1,5 @@
+
+----classes-------------------------------------------------------------------------------------------------------------------------------------
 insert into classes (class_name, type, country, num_guns, bore, displacement) values('Bismarck','bb','Germany',8,15,42000);
 insert into classes (class_name, type, country, num_guns, bore, displacement) values('Iowa','bb','USA',9,16,46000);
 insert into classes (class_name, type, country, num_guns, bore, displacement) values('Kongo','bc','Japan',8,14,32000);
@@ -7,6 +9,7 @@ insert into classes (class_name, type, country, num_guns, bore, displacement) va
 insert into classes (class_name, type, country, num_guns, bore, displacement) values('Tennessee','bb','USA',12,14,32000);
 insert into classes (class_name, type, country, num_guns, bore, displacement) values('Yamato','bb','Japan',9,18,65000);
 
+----battles-----------------------------------------------------------------------------------------------------
 insert into battles (name, date) values('Guadalcanal','19421115 00:00:00.000');
 insert into battles (name, date) values('North Atlantic','19410525 00:00:00.000');
 insert into battles (name, date) values('North Cape','19431226 00:00:00.000');
@@ -14,6 +17,7 @@ insert into battles (name, date) values('Surigao Strait','19441025 00:00:00.000'
 insert into battles (name, date) values ('#Cuba62a'   , '19621020');
 insert into battles (name, date) values ('#Cuba62b'   , '19621025');
 
+----ships--------------------------------------------------------------------------------------------------------
 insert into ships (name, class_name, launched) values('California','Tennessee',1921);
 insert into ships (name, class_name, launched) values('Haruna','Kongo',1916);
 insert into ships (name, class_name, launched) values('Hiei','Kongo',1914);
@@ -37,7 +41,7 @@ insert into ships (name, class_name, launched) values('Wisconsin','Iowa',1944);
 insert into ships (name, class_name, launched) values('Yamato','Yamato',1941);
 insert into ships (name, class_name, launched) values('South Dakota','North Carolina',1941) ;
 
-
+----outcomes------------------------------------------------------------------------------------------------
 insert into outcomes (ship, battle, result) values('Bismarck','North Atlantic','sunk');
 insert into outcomes (ship, battle, result) values('California','Surigao Strait','OK');
 insert into outcomes (ship, battle, result) values('Duke of York','North Cape','OK');
@@ -55,14 +59,14 @@ insert into outcomes (ship, battle, result) values('West Virginia','Surigao Stra
 insert into outcomes (ship, battle, result) values('Yamashiro','Surigao Strait','sunk');
 insert into outcomes (ship, battle, result) values('California','Guadalcanal','damaged');
 
-/*Добавляется два роли (ROLE_USER, ROLE_ADMIN)*/
+----roles-----------------------------------------------------------------------------------------------------------
 insert into roles (id, name) VALUES (1, 'ROLE_ADMIN');
 insert into roles (id, name) VALUES (2, 'ROLE_USER');
 
-/*Пользователь 'mirbek' с ролем (ROLE_ADMIN)*/
+----users-----------------------------------------------------------------------------------------------------------
 insert into users(id,status,updated, password, username)
 VALUES (1,  'ACTIVE', '2023-03-29 02:28:38.593', '$2a$04$MPFmkRWcDZqV.Tu8OEN13eeB/TriJo5SgvBckwZFYhfh1op45RVxS', 'mirbek');
 
-/*В промежуточной таблице добавляются роли к пользователям*/
+----users_roles-----------------------------------------------------------------------------------------------------
 insert into users_roles(user_id,role_id)VALUES (1,1);
 

@@ -16,5 +16,4 @@ public class BattleResponseDto {
 
     List<String> class_names;
 
-
 }
